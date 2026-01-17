@@ -1,0 +1,60 @@
+# HB-Eval Framework Requirements
+# Minimal dependencies for core functionality
+
+# Note: Mobile demos (mobile_demos/) require ZERO external packages
+# They use only Python standard library (random, statistics)
+
+# Core Framework (optional - for full features)
+numpy>=1.19.0         # Array operations (not required for mobile demos)
+scipy>=1.5.0          # Statistical functions (not required for mobile demos)
+
+# Benchmarks (optional - only if evaluating on WebArena/ALFWorld)
+# gym>=0.18.0
+# alfworld>=0.3.0
+
+# LLM Integration (optional - only if using LLM-based agents)
+# openai>=1.0.0
+# anthropic>=0.7.0
+
+# Utilities
+tqdm>=4.60.0          # Progress bars
+pyyaml>=5.4.0         # Config files
+
+# Development (optional)
+pytest>=7.0.0         # Testing
+black>=22.0.0         # Code formatting# HB-Eval Framework Requirements
+# Python 3.8+
+
+# Core Dependencies (Minimal)
+numpy>=1.19.0
+scipy>=1.5.0
+
+# Benchmark Integration
+gym>=0.18.0
+alfworld>=0.3.0
+
+# LLM Integration (Optional)
+openai>=1.0.0
+anthropic>=0.7.0
+
+# Utilities
+tqdm>=4.60.0
+pyyaml>=5.4.0
+python-dotenv>=0.19.0
+
+# Visualization (Optional)
+matplotlib>=3.3.0
+seaborn>=0.11.0
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+# Code Quality
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.950
+
+# Documentation
+sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0
