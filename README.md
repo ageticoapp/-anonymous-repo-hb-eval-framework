@@ -1,6 +1,8 @@
 # 📦 HB-Eval Anonymous Submission Package
 
-**Paper Title:** HB-Eval: Toward Verifiable Behavioral Certification for Agentic AI  
+**Paper Title:** HB-Eval: HB-EVAL: TOWARD VERIFIABLE BEHAVIORAL CERTIFICATION FOR AGENTIC AI
+FROM CAPABILITY TO RELIABILITY WITH A NEGATIVE RESULT ON REINFORCEMENT LEARNING FROM VERIFICATION SIGNALS
+
 **Venue:** VerifAI Workshop @ ICLR 2026  
 **Submission Date:** February 5, 2026
 
