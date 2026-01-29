@@ -1,99 +1,115 @@
 """
-HB-Eval: Episode-Level Reliability Evaluation Framework
+HB-Eval: Behavioral Certification for Agentic AI
 
-This module provides the core evaluation infrastructure for assessing
-procedural fairness in agentic AI systems through repeated episode-level
-behavioral analysis under controlled perturbations.
+A framework for evaluating AI agent reliability through systematic stress testing
+and multi-dimensional metrics that distinguish capability from reliability.
 
 Key Components:
-- EpisodeLevelEvaluator: Main orchestrator for K-episode evaluation
-- Metrics: Variance, consistency, robustness, clustering
-- Perturbations: Semantic-preserving task variations
-- ReliabilityProfile: Aggregated fairness assessment
+    - Metrics: FRR, PEI, IRS, ARR, TI
+    - Stress Testing: Fault injection, adversarial attacks
+    - Certification: Three-tier deployment framework
+    - RL Analysis: Withdrawal pathology detection
 
-Anonymous submission for ICLR 2026 AFAA Workshop.
+Example:
+    >>> from hb_eval import StressTester, MetricsCalculator
+    >>> tester = StressTester(domains=['healthcare'])
+    >>> results = tester.evaluate(agent, episodes=100)
+    >>> metrics = MetricsCalculator.compute_all(results)
+    >>> print(f"FRR: {metrics['FRR']:.2f}%")
+
+Citation:
+    Anonymous et al. (2026). HB-Eval: Toward Verifiable Behavioral 
+    Certification for Agentic AI. VerifAI Workshop @ ICLR 2026.
+
+License:
+    Apache 2.0
 """
 
-__version__ = "1.0.0"
-__status__ = "Anonymous Review"
+__version__ = "0.1.0"
+__author__ = "Anonymous Authors"
+__license__ = "Apache 2.0"
 
-from .evaluator import EpisodeLevelEvaluator
-from .metrics import (
-    compute_variance,
-    compute_behavioral_consistency,
-    compute_perturbation_robustness,
-    compute_failure_clustering
-)
-from .perturbations import (
-    ParaphrasePerturbation,
-    ContextPerturbation,
-    FormatPerturbation
-)
-from .reliability_profile import ReliabilityProfile
+# Core imports (to be implemented post-acceptance)
+try:
+    from .metrics import (
+        MetricsCalculator,
+        FailureResilienceRate,
+        PlanningEfficiencyIndex,
+        IntentionalRecoveryScore,
+        AdversarialResilienceRate,
+        TraceabilityIndex
+    )
+    
+    from .stress_testing import (
+        StressTester,
+        FaultInjector,
+        AdversarialAttacker
+    )
+    
+    from .environments import (
+        Environment,
+        HealthcareEnvironment,
+        LogisticsEnvironment,
+        CodingEnvironment
+    )
+    
+    from .certification import (
+        CertificationFramework,
+        Tier1Operational,
+        Tier2Supervised,
+        Tier3SafetyCritical
+    )
+    
+except ImportError:
+    # During development/submission phase
+    pass
 
 __all__ = [
-    "EpisodeLevelEvaluator",
-    "compute_variance",
-    "compute_behavioral_consistency",
-    "compute_perturbation_robustness",
-    "compute_failure_clustering",
-    "ParaphrasePerturbation",
-    "ContextPerturbation",
-    "FormatPerturbation",
-    "ReliabilityProfile"
+    # Version info
+    '__version__',
+    '__author__',
+    '__license__',
+    
+    # Core classes (available post-full implementation)
+    'MetricsCalculator',
+    'StressTester',
+    'Environment',
+    'CertificationFramework',
 ]
 
-# Compatibility note for mobile demos:
-# The mobile_demos/ directory contains simplified, zero-dependency 
-# implementations that validate core algorithmic logic using only
-# Python's standard library. Those demos are functionally equivalent
-# to this production framework but designed for:
-# - Educational purposes (teaching core concepts)
-# - Rapid prototyping (testing without infrastructure)
-# - Accessibility (running on mobile/embedded devices)
-#
-# This framework (hb_eval/) is the production-grade implementation
-# designed for:
-# - Real agent evaluation (ReAct, Reflexion, ToT, etc.)
-# - Full benchmark integration (WebArena, ALFWorld, etc.)
-# - Comprehensive metrics (variance, consistency, robustness, clustering)
-# - Statistical rigor (significance tests, confidence intervals)"""
-HB-Eval: Episode-Level Reliability Evaluation Framework
 
-This module provides the core evaluation infrastructure for assessing
-procedural fairness in agentic AI systems through repeated episode-level
-behavioral analysis under controlled perturbations.
+def get_version():
+    """Return current version."""
+    return __version__
 
-Anonymous submission for ICLR 2026 AFAA Workshop.
+
+def citation():
+    """Return citation information."""
+    return """
+@inproceedings{anonymous2026hbeval,
+  title={HB-Eval: Toward Verifiable Behavioral Certification for Agentic AI},
+  author={Anonymous Authors},
+  booktitle={VerifAI Workshop @ ICLR 2026},
+  year={2026},
+  url={https://anonymous.4open.science/r/hb-eval-XXXX}
+}
 """
 
-__version__ = "1.0.0"
-__status__ = "Anonymous Review"
 
-from .evaluator import EpisodeLevelEvaluator
-from .metrics import (
-    compute_variance,
-    compute_behavioral_consistency,
-    compute_perturbation_robustness,
-    compute_failure_clustering
-)
-from .perturbations import (
-    ParaphrasePerturbation,
-    ContextPerturbation,
-    FormatPerturbation
-)
-from .clustering import FailureClusterAnalyzer
-from .reliability_profile import ReliabilityProfile
-
-__all__ = [
-    "EpisodeLevelEvaluator",
-    "compute_variance",
-    "compute_behavioral_consistency",
-    "compute_perturbation_robustness",
-    "compute_failure_clustering",
-    "ParaphrasePerturbation",
-    "ContextPerturbation",
-    "FormatPerturbation",
-    "FailureClusterAnalyzer",
-    "ReliabilityProfile"
-]
+# Package metadata
+PACKAGE_INFO = {
+    'name': 'hb-eval',
+    'version': __version__,
+    'description': 'Behavioral Certification Framework for Agentic AI',
+    'author': __author__,
+    'license': __license__,
+    'url': 'https://anonymous.4open.science/r/hb-eval-XXXX',
+    'keywords': [
+        'ai-safety',
+        'agent-evaluation', 
+        'behavioral-certification',
+        'reinforcement-learning',
+        'verification'
+    ],
+    'python_requires': '>=3.8',
+}
